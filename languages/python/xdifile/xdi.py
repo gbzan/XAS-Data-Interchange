@@ -114,7 +114,8 @@ def get_dllname():
     """find XDIFILE dll"""
     dllname = 'libxdifile.so'
     path_sep = ':'
-    paths = ['/usr/lib', '/usr/lib64', '/usr/local/lib', '/usr/local/lib64']
+
+    paths = [os.path.join(sys.exec_prefix, 'lib64'), os.path.join(sys.exec_prefix, 'lib'), '/usr/lib', '/usr/lib64', '/usr/local/lib', '/usr/local/lib64']
 
     if sys.platform.startswith('win'):
         dllname = 'xdifile.dll'
